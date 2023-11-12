@@ -17,11 +17,14 @@ public class TeamProjectRoom implements IRoom {
 
     @Override
     public void print() {
-
+        System.out.format("%s %s %s", code, name, count);
     }
 
     @Override
     public void read(Scanner scanner) {
+        code = scanner.next();
+        name = scanner.next();
+        count = scanner.nextInt();
 
     }
 }

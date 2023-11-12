@@ -8,7 +8,7 @@ public class AgoraRoom implements IRoom {
 
     String code;
     String name;
-    ArrayList<Sheet> sheets;
+    ArrayList<Sheet> sheets = new ArrayList<>();
 
     @Override
     public void matches(String kwd) {
@@ -17,11 +17,16 @@ public class AgoraRoom implements IRoom {
 
     @Override
     public void print() {
-
+        System.out.format("%s %s", code, name);
     }
 
     @Override
     public void read(Scanner scanner) {
+        code = scanner.next();
+        name = scanner.next();
 
+        while (scanner.hasNext()){
+            sheets.add(new Sheet(scanner.next()));
+        }
     }
 }
